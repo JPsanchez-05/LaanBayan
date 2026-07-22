@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laan Bayan - Login</title>
+  <link rel="icon" href="LaanBayan/png/favicon.png">
+  <link rel="stylesheet" href="web.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo-text">LAAN BAYAN</h1>
+    <div class="logos">
+      <img src="png/ugac.png" alt="UGAC Logo" class="logo-img">
+      <img src="png/favicon.png" alt="Favicon Logo" class="logo-img">
+      <img src="png/icpep.png" alt="ICPEP Logo" class="logo-img">
+    </div>
+  </header>
+
+  <main class="content">
+
+    <!-- Left side: fills the empty space with context about the service -->
+    <section class="intro">
+      <h2>Iwas Pila,<br>Para sa Bawat Isa.</h2>
+      <p>
+        Laan Bayan lets you request barangay documents and reserve healthcare
+        appointments online, so you only show up when it's actually your turn.
+      </p>
+    </section>
+
+    <div class="login-box">
+      <h2>Login</h2>
+
+      <!-- Space reserved for server-side / JS validation errors -->
+      <p class="form-error" id="formError" role="alert" hidden>
+        Invalid name or password. Please try again.
+      </p>
+
+      <form id="loginForm" novalidate>
+        <label class="field-label" for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" required autocomplete="username">
+
+        <label class="field-label" for="password">Password</label>
+        <div class="password-wrap">
+          <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+          <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="row-between">
+          <label class="remember">
+            <input type="checkbox" name="remember">
+            Remember me
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn proceed">Proceed</button>
+      </form>
+
+      <p class="switch-text">
+        Don't have an account? <a href="#" class="register-link">Register</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Laan Bayan. A barangay service portal. <a href="#">Help</a> · <a href="#">Contact</a></p>
+  </footer>
+
+</body>
+</html>

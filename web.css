@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #f7cb85, #fce8c9 40%, #fbe3c2);
+}
+
+/* Top navbar */
+.navbar {
+  background-color: #6e1423;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text {
+  color: #f5e3b3;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.logos {
+  display: flex;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Main content: intro (left) + login box (right) */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 100px;
+}
+
+.intro {
+  max-width: 480px;
+  color: #6e1423;
+}
+
+.intro h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.intro p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #7a3b3b;
+}
+
+.intro .slogan {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  color: #6e1423;
+  margin-bottom: 16px;
+}
+
+.intro-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.intro-list li {
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 26px;
+  position: relative;
+}
+
+.intro-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #f2b632;
+  font-weight: bold;
+}
+
+/* Login box */
+.login-box {
+  background-color: #6e1423;
+  color: #fff;
+  width: 300px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.login-box h2 {
+  font-weight: normal;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.form-error {
+  background-color: #ffe1e1;
+  color: #7a1a1a;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  text-align: left;
+  font-size: 12px;
+  color: #f5e3b3;
+  margin-top: 8px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+.login-box input:focus {
+  outline: 3px solid #f2b632;
+  outline-offset: 2px;
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6e1423;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+}
+
+.toggle-password:focus {
+  outline: 2px solid #f2b632;
+  border-radius: 50%;
+}
+
+.row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0 8px;
+  font-size: 13px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #f5e3b3;
+  text-decoration: none;
+}
+
+.forgot-link:hover,
+.forgot-link:focus {
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.proceed {
+  background-color: #f2b632;
+  color: #5a1a1a;
+  width: 100%;
+}
+
+.proceed:hover {
+  background-color: #e0a520;
+}
+
+.switch-text {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #f5e3b3;
+}
+
+.switch-text a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 18px;
+  font-size: 12px;
+  color: #7a3b3b;
+}
+
+.site-footer a {
+  color: #6e1423;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    padding: 40px 24px;
+  }
+
+  .intro {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .intro-list {
+    align-items: center;
+  }
+
+  .intro-list li {
+    padding-left: 0;
+  }
+
+  .intro-list li::before {
+    display: none;
+  }
+}
