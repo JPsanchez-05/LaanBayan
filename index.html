@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laan Bayan - Login</title>
-  <link rel="icon" href="LaanBayan/png/favicon.png">
-  <link rel="stylesheet" href="web.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laan Bayan - Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="web.css">
 </head>
 <body>
 
   <header class="navbar">
-    <h1 class="logo-text">LAAN BAYAN</h1>
-    <div class="logos">
-      <img src="png/ugac.png" alt="UGAC Logo" class="logo-img">
-      <img src="png/favicon.png" alt="Favicon Logo" class="logo-img">
-      <img src="png/icpep.png" alt="ICPEP Logo" class="logo-img">
+    <h1 class="logo-text"><span class="laan">Laan</span><span class="bayan">Bayan</span></h1>
+
+    <nav class="nav-links">
+      <button type="button" data-target="about">About</button>
+      <button type="button" data-target="services">Services</button>
+      <button type="button" data-target="contact">Contact</button>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="logos">
+        <img src="png/ugac.png" alt="UGAC Logo" class="logo-img">
+        <img src="png/favicon.png" alt="Favicon Logo" class="logo-img">
+        <img src="png/icpep.png" alt="ICPEP Logo" class="logo-img">
+      </div>
     </div>
   </header>
 
   <main class="content">
 
-    <!-- Left side: fills the empty space with context about the service -->
     <section class="intro">
       <h2>Iwas Pila,<br>Para sa Bawat Isa.</h2>
       <p>
@@ -32,7 +42,6 @@
     <div class="login-box">
       <h2>Login</h2>
 
-      <!-- Space reserved for server-side / JS validation errors -->
       <p class="form-error" id="formError" role="alert" hidden>
         Invalid name or password. Please try again.
       </p>
@@ -69,9 +78,75 @@
     </div>
   </main>
 
+  <!-- About -->
+  <section class="page-section" id="about">
+    <div class="section-inner">
+      <span class="section-eyebrow">About Laan Bayan</span>
+      <h2>Mission &amp; Purpose</h2>
+      <p>
+        Laan Bayan is a barangay appointment and service availability system built to
+        cut down on wasted trips and long walk-in lines. Residents can check what
+        services are open, book a time slot, and track their place in the queue
+        from anywhere &mdash; no more guessing whether the office is even open today.
+      </p>
+      <h3>What we're solving</h3>
+      <p>
+        Long unplanned queues at the barangay hall, unclear service hours, and no
+        way to know ahead of time whether a request can even be processed that day.
+        Laan Bayan gives every service a live status &mdash; available, full, or closed
+        &mdash; so residents only show up when it counts.
+      </p>
+      <h3>Our commitment</h3>
+      <p>
+        Laan Bayan is maintained by the barangay office and is continuously
+        updated based on resident feedback. The goal stays the same: less time
+        waiting in line, more time back in your day.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="page-section" id="services">
+    <div class="section-inner">
+      <span class="section-eyebrow">What's Available</span>
+      <h2>Services</h2>
+      <p>
+        Browse barangay services with live availability, requirements, and
+        processing time, then book a slot when you're ready.
+      </p>
+      <div class="placeholder-box">
+        Services list placeholder &mdash; content coming soon
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="page-section" id="contact">
+    <div class="section-inner">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          laanbayan@gmail.com
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          facebook.com/LaanBayan
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.6 2.51a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.57-1.57a2 2 0 0 1 2.11-.45c.81.28 1.65.48 2.51.6A2 2 0 0 1 22 16.92z"/></svg>
+          (043) 000-0000
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <p>&copy; 2026 Laan Bayan. A barangay service portal. <a href="#">Help</a> · <a href="#">Contact</a></p>
+    <p>&copy; 2026 Laan Bayan. A barangay service portal. <a href="#">Help</a> &middot; <a href="#">Contact</a></p>
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>

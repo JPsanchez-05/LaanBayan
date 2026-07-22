@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
 html, body {
@@ -12,22 +12,68 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #f7cb85, #fce8c9 40%, #fbe3c2);
+  background-color: #f1f1ef;
 }
 
-/* Top navbar */
 .navbar {
-  background-color: #6e1423;
+  background-color: #4c8b5d;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .logo-text {
-  color: #f5e3b3;
-  font-size: 32px;
-  letter-spacing: 1px;
+  font-family: 'Baloo 2', 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  letter-spacing: 0.5px;
+  display: flex;
+}
+
+.logo-text .laan {
+  color: #f0f6f1;
+}
+
+.logo-text .bayan {
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: #f0e6c8;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  padding: 4px 2px;
+}
+
+.nav-links button:hover,
+.nav-links button:focus-visible {
+  color: #ffffff;
+}
+
+.nav-links button:focus-visible {
+  outline: 2px solid #f0e6c8;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .logos {
@@ -41,9 +87,9 @@ body {
   object-fit: contain;
 }
 
-/* Main content: intro (left) + login box (right) */
 .content {
   flex: 1;
+  min-height: calc(100vh - 92px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,27 +99,28 @@ body {
 
 .intro {
   max-width: 480px;
-  color: #6e1423;
+  color: #33502f;
 }
 
 .intro h2 {
   font-size: 40px;
   line-height: 1.2;
   margin-bottom: 16px;
+  color: #2f4d33;
 }
 
 .intro p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
-  color: #7a3b3b;
+  color: #4b5f47;
 }
 
 .intro .slogan {
   font-size: 18px;
   font-weight: bold;
   font-style: italic;
-  color: #6e1423;
+  color: #33502f;
   margin-bottom: 16px;
 }
 
@@ -89,19 +136,19 @@ body {
   font-weight: bold;
   padding-left: 26px;
   position: relative;
+  color: #33502f;
 }
 
 .intro-list li::before {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #f2b632;
+  color: #4c8b5d;
   font-weight: bold;
 }
 
-/* Login box */
 .login-box {
-  background-color: #6e1423;
+  background-color: #4c8b5d;
   color: #fff;
   width: 300px;
   padding: 30px 25px;
@@ -135,7 +182,7 @@ body {
 .field-label {
   text-align: left;
   font-size: 12px;
-  color: #f5e3b3;
+  color: #eaf3ea;
   margin-top: 8px;
 }
 
@@ -165,13 +212,13 @@ body {
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #6e1423;
+  color: #4c8b5d;
   cursor: pointer;
   padding: 4px;
   display: flex;
 }
 
-.toggle-password:focus {
+.toggle-password:focus-visible {
   outline: 2px solid #f2b632;
   border-radius: 50%;
 }
@@ -192,7 +239,7 @@ body {
 }
 
 .forgot-link {
-  color: #f5e3b3;
+  color: #eaf3ea;
   text-decoration: none;
 }
 
@@ -211,14 +258,14 @@ body {
   margin-top: 8px;
 }
 
-.btn:focus {
+.btn:focus-visible {
   outline: 3px solid #fff;
   outline-offset: 2px;
 }
 
 .proceed {
   background-color: #f2b632;
-  color: #5a1a1a;
+  color: #33502f;
   width: 100%;
 }
 
@@ -229,7 +276,7 @@ body {
 .switch-text {
   margin-top: 16px;
   font-size: 13px;
-  color: #f5e3b3;
+  color: #eaf3ea;
 }
 
 .switch-text a {
@@ -238,16 +285,102 @@ body {
   text-decoration: underline;
 }
 
-/* Footer */
+/* Shared section styling for About / Services / Contact */
+.page-section {
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  padding: 80px 100px;
+  scroll-margin-top: 92px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.page-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  color: #4c8b5d;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-inner h2 {
+  color: #2f4d33;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.section-inner p {
+  color: #45564a;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.section-inner h3 {
+  color: #33502f;
+  font-size: 16px;
+  margin: 18px 0 8px;
+}
+
+#services.page-section {
+  background-color: #ffffff;
+}
+
+.placeholder-box {
+  border: 2px dashed #c9d8ca;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  color: #7f9280;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.contact-list {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #33502f;
+  font-weight: 600;
+}
+
+.contact-list li svg {
+  flex-shrink: 0;
+  color: #4c8b5d;
+}
+
 .site-footer {
   text-align: center;
   padding: 18px;
   font-size: 12px;
-  color: #7a3b3b;
+  color: #6b7d68;
 }
 
 .site-footer a {
-  color: #6e1423;
+  color: #33502f;
   font-weight: bold;
   text-decoration: none;
 }
@@ -256,7 +389,12 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive */
+@media (prefers-reduced-motion: reduce) {
+  .page-section {
+    transition: none;
+  }
+}
+
 @media (max-width: 900px) {
   .content {
     flex-direction: column;
@@ -278,5 +416,21 @@ body {
 
   .intro-list li::before {
     display: none;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .page-section {
+    padding: 60px 24px;
   }
 }
