@@ -24,3 +24,20 @@ toggleBtn.addEventListener('click', () => {
   passwordInput.type = isPassword ? 'text' : 'password';
   toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
 });
+
+const loginPanel = document.getElementById("loginPanel");
+const registerPanel = document.getElementById("registerPanel");
+
+document.getElementById("showRegister").addEventListener("click", function(e){
+    e.preventDefault();
+
+    loginPanel.style.display = "none";
+    registerPanel.style.display = "block";
+});
+
+document.getElementById("showLogin").addEventListener("click", function(e){
+    e.preventDefault();
+
+    registerPanel.style.display = "none";
+    loginPanel.style.display = "block";
+});

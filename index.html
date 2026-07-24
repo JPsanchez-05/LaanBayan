@@ -3,150 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laan Bayan - Login</title>
+<title>LaanBayan — Iwas Pila, Para sa Bawat Isa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kavivanar&family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="web.css">
 </head>
 <body>
 
-  <header class="navbar">
-    <h1 class="logo-text"><span class="laan">Laan</span><span class="bayan">Bayan</span></h1>
-
-    <nav class="nav-links">
-      <button type="button" data-target="about">About</button>
-      <button type="button" data-target="services">Services</button>
-      <button type="button" data-target="contact">Contact</button>
-    </nav>
-
-    <div class="nav-actions">
-      <div class="logos">
-        <img src="png/ugac.png" alt="UGAC Logo" class="logo-img">
-        <img src="png/favicon.png" alt="Favicon Logo" class="logo-img">
-        <img src="png/icpep.png" alt="ICPEP Logo" class="logo-img">
-      </div>
+<!-- HERO SECTION: Sticky nav, tagline, and login card -->
+<div class="hero-section" id="heroSection">
+  <div class="nav-inner">
+    <div class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21V10"/>
+        <path d="M12 10C12 10 6 10 6 4C12 4 12 10 12 10Z"/>
+        <path d="M12 14C12 14 18 14 18 8C12 8 12 14 12 14Z"/>
+      </svg>
+      <!-- "Laan" and "Bayan" are wrapped together in one .wordmark span so the
+           parent .logo's flex `gap` (meant to space the icon from the text)
+           doesn't also insert a gap between the two halves of the word. -->
+      <span class="wordmark"><span class="laan">Laan</span><span class="bayan">Bayan</span></span>
     </div>
-  </header>
-
-  <main class="content">
-
-    <section class="intro">
-      <h2>Iwas Pila,<br>Para sa Bawat Isa.</h2>
-      <p>
-        Laan Bayan lets you request barangay documents and reserve healthcare
-        appointments online, so you only show up when it's actually your turn.
-      </p>
-    </section>
-
-    <div class="login-box">
-      <h2>Login</h2>
-
-      <p class="form-error" id="formError" role="alert" hidden>
-        Invalid name or password. Please try again.
-      </p>
-
-      <form id="loginForm" novalidate>
-        <label class="field-label" for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" required autocomplete="username">
-
-        <label class="field-label" for="password">Password</label>
-        <div class="password-wrap">
-          <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
-          <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-          </button>
-        </div>
-
-        <div class="row-between">
-          <label class="remember">
-            <input type="checkbox" name="remember">
-            Remember me
-          </label>
-          <a href="#" class="forgot-link">Forgot password?</a>
-        </div>
-
-        <button type="submit" class="btn proceed">Proceed</button>
-      </form>
-
-      <p class="switch-text">
-        Don't have an account? <a href="#" class="register-link">Register</a>
-      </p>
-    </div>
-  </main>
-
-  <!-- About -->
-  <section class="page-section" id="about">
-    <div class="section-inner">
-      <span class="section-eyebrow">About Laan Bayan</span>
-      <h2>Mission &amp; Purpose</h2>
-      <p>
-        Laan Bayan is a barangay appointment and service availability system built to
-        cut down on wasted trips and long walk-in lines. Residents can check what
-        services are open, book a time slot, and track their place in the queue
-        from anywhere &mdash; no more guessing whether the office is even open today.
-      </p>
-      <h3>What we're solving</h3>
-      <p>
-        Long unplanned queues at the barangay hall, unclear service hours, and no
-        way to know ahead of time whether a request can even be processed that day.
-        Laan Bayan gives every service a live status &mdash; available, full, or closed
-        &mdash; so residents only show up when it counts.
-      </p>
-      <h3>Our commitment</h3>
-      <p>
-        Laan Bayan is maintained by the barangay office and is continuously
-        updated based on resident feedback. The goal stays the same: less time
-        waiting in line, more time back in your day.
-      </p>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="page-section" id="services">
-    <div class="section-inner">
-      <span class="section-eyebrow">What's Available</span>
-      <h2>Services</h2>
-      <p>
-        Browse barangay services with live availability, requirements, and
-        processing time, then book a slot when you're ready.
-      </p>
-      <div class="placeholder-box">
-        Services list placeholder &mdash; content coming soon
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="page-section" id="contact">
-    <div class="section-inner">
-      <span class="section-eyebrow">Get in Touch</span>
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
-          laanbayan@gmail.com
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          facebook.com/LaanBayan
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.6 2.51a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.57-1.57a2 2 0 0 1 2.11-.45c.81.28 1.65.48 2.51.6A2 2 0 0 1 22 16.92z"/></svg>
-          (043) 000-0000
-        </li>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Purpose</a></li>
+        <li><a href="#services">Services</a></li>
       </ul>
+    </nav>
+  </div>
+
+  <div class="hero-content" id="home">
+    <div>
+      <div class="eyebrow">Barangay Appointment System</div>
+      <h1 class="headline">Iwas Pila,<br>Para sa Bawat Isa.</h1>
+      <p class="hero-sub">Laan Bayan lets you request barangay documents and reserve healthcare appointments online, so you only show up when it's actually your turn.</p>
+      <div class="feature-row">
+        <span class="feature-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4C8B5D" stroke-width="2"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#4C8B5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Digital Queue
+        </span>
+        <span class="feature-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4C8B5D" stroke-width="2"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#4C8B5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Fast processing
+        </span>
+        <span class="feature-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4C8B5D" stroke-width="2"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#4C8B5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          No-Contact Processing
+        </span>
+      </div>
+    </div>
+
+    <div class="login-panel">
+      <h2 class="login-title">LOGIN</h2>
+      <div class="login-card">
+        <p class="form-error" id="formError" role="alert" hidden>Invalid ID number or password. Please try again.</p>
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="brgy-id">Barangay ID Number</label>
+            <div class="input-wrap"><input id="brgy-id" name="brgy-id" type="text" placeholder="NUMBAH" required autocomplete="off"></div>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <input id="password" name="password" type="password" placeholder="PASSWORD" required autocomplete="current-password">
+              <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="#828282" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="#828282" stroke-width="1.6"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="row-between">
+            <label class="remember"><input type="checkbox" name="remember"> Remember me</label>
+            <a href="#" class="forgot">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn-proceed">Proceed</button>
+        </form>
+      </div>
+      <div class="register-line">New user? <a href="#" class="register-link">Register here</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCROLLABLE CONTENT -->
+<div class="scroll-content">
+
+  <!-- ABOUT & PURPOSE SECTION -->
+  <section class="about-section" id="about">
+    <div class="about">
+      <h2 class="about-heading">Built to cut down on wasted trips.</h2>
+
+      <div class="about-grid">
+        <div>
+          <h3>Mission &amp; Purpose</h3>
+          <p>Laan Bayan is a barangay appointment and service availability system built to cut down on wasted trips and long walk-in lines. Residents can check what services are open, book a time slot, and track their place in the queue from anywhere — no more guessing whether the office is even open today.</p>
+          <h3>What we're solving</h3>
+          <p>Long unplanned queues at the barangay hall, unclear service hours, and no way to know ahead of time whether a request can even be processed that day.</p>
+        </div>
+        <img class="about-img" src="png/barangay-seal.png" alt="Barangay Ugac Sur seal">
+      </div>
     </div>
   </section>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 Laan Bayan. A barangay service portal. <a href="#">Help</a> &middot; <a href="#">Contact</a></p>
+  <!-- SERVICES SECTION -->
+  <section class="services-section" id="services">
+    <div class="services">
+      <div class="services-head">
+        <h2>Services</h2>
+        <p>Attached are the requirements needed for each service</p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="svc-card">
+          <span class="svc-badge"></span>
+          <div class="svc-name">Barangay Clearance</div>
+          <div class="svc-time">15 mins</div>
+          <div class="svc-chips">
+            <span class="chip">Valid ID</span>
+            <span class="chip">Proof of Residency</span>
+            <span class="chip">2x2 Picture</span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <span class="svc-badge"></span>
+          <div class="svc-name">Certificate of Indigency</div>
+          <div class="svc-time">20 mins</div>
+          <div class="svc-chips">
+            <span class="chip">Valid ID</span>
+            <span class="chip">Proof of Residency</span>
+            <span class="chip">Sworn Affidavit</span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <span class="svc-badge"></span>
+          <div class="svc-name">Business Permit Endorsement</div>
+          <div class="svc-time">30 mins</div>
+          <div class="svc-chips">
+            <span class="chip">DTI/SEC Certificate</span>
+            <span class="chip">Valid ID</span>
+            <span class="chip">Lease Contract or Title</span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <span class="svc-badge"></span>
+          <div class="svc-name">Barangay ID</div>
+          <div class="svc-time">10 mins</div>
+          <div class="svc-chips">
+            <span class="chip">PSA Birth Certificate</span>
+            <span class="chip">2x2 Picture</span>
+            <span class="chip">Proof of Residency</span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <span class="svc-badge"></span>
+          <div class="svc-name">Cedula</div>
+          <div class="svc-time">15 mins</div>
+          <div class="svc-chips">
+            <span class="chip">Valid ID</span>
+            <span class="chip">Previous Year Cedula <small>(if applicable)</small></span>
+          </div>
+        </div>
+
+        <div class="svc-card">
+          <span class="svc-badge active"></span>
+          <div class="svc-name">Health Services &amp; Barangay Announcements</div>
+          <div class="svc-chips">
+            <span class="chip">Up to date announcements</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p><strong>LaanBayan</strong></p>
+        <p class="url"><a href="#"><span>www.</span>LaanBayan.com</a></p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>CONTACT INFORMATION:</h4>
+        <div class="row">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 6l10 7 10-7" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span><strong>Email</strong> : laanbayan@gmail.com</span>
+        </div>
+        <div class="row">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M14 8h-1.5A1.5 1.5 0 0 0 11 9.5V12h3l-.5 3H11v5" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span><strong>Facebook Page</strong> : facebook.com/LaanBayan</span>
+        </div>
+        <div class="row">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6-4 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span><strong>Mobile No.</strong> : (043) 000-0000</span>
+        </div>
+      </div>
+
+      <div class="footer-logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#2f4d33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21V10"/>
+          <path d="M12 10C12 10 6 10 6 4C12 4 12 10 12 10Z"/>
+          <path d="M12 14C12 14 18 14 18 8C12 8 12 14 12 14Z"/>
+        </svg>
+        <span class="wordmark"><span class="laan">Laan</span><span class="bayan">Bayan</span></span>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Laan Bayan</p>
   </footer>
 
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
