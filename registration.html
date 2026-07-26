@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaanBayan — Create an Account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kavivanar&family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/web.css">
+</head>
+<body>
+
+<div class="nav-inner">
+  <div class="logo">
+    <svg class="logo-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21V10"/>
+      <path d="M12 10C12 10 6 10 6 4C12 4 12 10 12 10Z"/>
+      <path d="M12 14C12 14 18 14 18 8C12 8 12 14 12 14Z"/>
+    </svg>
+    <span class="wordmark"><span class="laan">Laan</span><span class="bayan">Bayan</span></span>
+  </div>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>Purpose</li>
+      <li>Services</li>
+    </ul>
+  </nav>
+</div>
+
+<main class="register-page">
+  <div class="register-card">
+    <h2 class="register-heading">Create new account</h2>
+
+    <p class="form-error" id="registerError" role="alert" hidden>Please check the fields above and try again.</p>
+
+    <form id="registerForm" novalidate>
+      <div class="field">
+        <label for="fullName">Full Name</label>
+        <div class="input-wrap">
+          <input id="fullName" name="fullName" type="text" placeholder="Ex. Juan Dela Cruz" required autocomplete="name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="purok">Purok / Address</label>
+        <div class="input-wrap">
+          <input id="purok" name="purok" type="text" placeholder="Ex. Purok 4, Barangay Maharlika" required autocomplete="off">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="contact">Contact Number</label>
+        <div class="input-wrap">
+          <input id="contact" name="contact" type="tel" placeholder="Ex. 0917XXXXXXX" required autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="barangayId">Barangay ID</label>
+        <div class="input-wrap">
+          <input id="barangayId" name="barangayId" type="text" placeholder="Enter ID number for the barangay card" required autocomplete="off">
+        </div>
+      </div>
+
+      <div class="form-row-2">
+        <div class="field">
+          <label for="regPassword">Password</label>
+          <div class="input-wrap">
+            <input id="regPassword" name="regPassword" type="password" placeholder="Type your password" required autocomplete="new-password">
+            <button type="button" class="toggle-password" aria-label="Show password">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="#828282" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="#828282" stroke-width="1.6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="input-wrap">
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-enter password" required autocomplete="new-password">
+            <button type="button" class="toggle-password" aria-label="Show password">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="#828282" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="#828282" stroke-width="1.6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <label class="agree-row">
+        <input type="checkbox" id="agreeTerms" required>
+        <span>I agree to share my information with regards to the <a href="#">Privacy and Policy</a> of this site.</span>
+      </label>
+
+      <a href="index.html"><button type="submit" class="btn-proceed btn-register">Register Now</button></a>
+    </form>
+
+    <div class="register-line">Already have an account? <a href="index.html" class="register-link">Login here</a></div>
+  </div>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

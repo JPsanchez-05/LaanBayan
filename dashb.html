@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaanBayan — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/web.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar expanded" id="sidebar">
+
+    <div class="sidebar-top">
+      <div class="sidebar-brand">
+        <svg class="logo-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21V10"/>
+        <path d="M12 10C12 10 6 10 6 4C12 4 12 10 12 10Z"/>
+        <path d="M12 14C12 14 18 14 18 8C12 8 12 14 12 14Z"/>
+        </svg>
+        <span class="sidebar-brand-text">Laan<span class="bayan">Bayan</span></span>
+      </div>
+
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar" aria-expanded="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+        <span class="sidebar-toggle-text">Options</span>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link active" data-page="dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 11l9-8 9 8"/>
+          <path d="M5 10v10h14V10"/>
+        </svg>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="#" class="sidebar-link" data-page="queue">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M8.5 12.5l2.5 2.5 4.5-5"/>
+        </svg>
+        <span>My Queue</span>
+      </a>
+
+      <a href="#" class="sidebar-link" data-page="about">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12a8 8 0 1 1-3.2-6.4"/>
+          <path d="M21 4v6h-6"/>
+        </svg>
+        <span>About</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-user">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 21c0-4 4-7 8-7s8 3 8 7"/>
+        </svg>
+        <div class="sidebar-user-info">
+          <span class="sidebar-user-name">Juan Dela Cruz</span>
+          <span class="sidebar-user-role">Resident</span>
+        </div>
+      </div>
+
+      <a href="index.html" class="sidebar-link sidebar-signout" id="signOutLink">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <path d="M16 17l5-5-5-5"/>
+          <path d="M21 12H9"/>
+        </svg>
+        <span>Sign out</span></a>
+      </a>
+    </div>
+
+  </aside>
+
+  <main class="dash-main" id="dashMain">
+    <!-- Dashboard page content (services, announcements, etc.) goes here -->
+  </main>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

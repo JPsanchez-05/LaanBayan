@@ -533,6 +533,80 @@ footer {
 }
 
 /* =========================================================
+   REGISTRATION PAGE
+   (append to web.css — new section, reuses existing tokens
+   and .btn-proceed / .field / .input-wrap / .register-line
+   classes already defined for the login page)
+   ========================================================= */
+.register-page {
+  min-height: calc(100vh - 62px);
+  background: linear-gradient(180deg, var(--cream-top) 0%, var(--cream-bottom) 100%);
+  display: flex;
+  justify-content: center;
+  padding: 60px 24px 80px;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 460px;
+  height: fit-content;
+  background-color: var(--cream-top);
+  border: 1px solid rgba(47, 77, 51, 0.08);
+  border-radius: 16px;
+  padding: 28px 30px 26px;
+  box-shadow: 0 8px 20px rgba(47, 77, 51, 0.1);
+}
+
+.register-heading {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.agree-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-gray);
+  margin: 6px 0 18px;
+}
+
+.agree-row input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.agree-row a {
+  color: var(--green-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.btn-register {
+  background-color: var(--green);
+}
+
+.btn-register:hover {
+  background-color: #3f7a4e;
+}
+
+@media (max-width: 560px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 900px) {
@@ -586,5 +660,228 @@ footer {
 
   .footer-inner {
     flex-direction: column;
+  }
+}
+
+/* =========================================================
+   DASHBOARD APP SHELL + SIDEBAR
+   (append to web.css — new section, no existing rules touched)
+   ========================================================= */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 72px;
+  background-color: var(--green-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 0;
+  transition: width 0.25s ease;
+  overflow: hidden;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+.sidebar-top,
+.sidebar-nav,
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-top {
+  margin-bottom: 28px;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 22px;
+  height: 32px;
+  margin-bottom: 14px;
+}
+
+.sidebar-brand svg {
+  flex-shrink: 0;
+  stroke: var(--gold);
+}
+
+.sidebar-brand-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #ffffff;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expanded .sidebar-brand-text {
+  opacity: 1;
+}
+
+.sidebar-brand-text .bayan {
+  color: var(--gold);
+}
+
+.sidebar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 22px;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar-toggle svg {
+  flex-shrink: 0;
+  stroke: #ffffff;
+}
+
+.sidebar-toggle-text {
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expanded .sidebar-toggle-text {
+  opacity: 1;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  opacity: 0.85;
+  border-radius: 0;
+  position: relative;
+}
+
+.sidebar-link svg {
+  flex-shrink: 0;
+  stroke: #ffffff;
+}
+
+.sidebar-link span {
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expanded .sidebar-link span {
+  opacity: 1;
+}
+
+.sidebar-link:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-link.active {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  background-color: var(--gold);
+  border-radius: 0 3px 3px 0;
+}
+
+.sidebar-bottom {
+  gap: 10px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 4px 22px 10px;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px 10px;
+}
+
+.sidebar-user svg {
+  flex-shrink: 0;
+  stroke: #ffffff;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expanded .sidebar-user-info {
+  opacity: 1;
+}
+
+.sidebar-user-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sidebar-user-role {
+  font-size: 11px;
+  color: var(--gold);
+}
+
+.sidebar-signout {
+  opacity: 0.85;
+}
+
+/* =========================================================
+   DASHBOARD MAIN CONTENT AREA
+   ========================================================= */
+.dash-main {
+  flex-grow: 1;
+  background: linear-gradient(180deg, var(--cream-top) 0%, var(--cream-bottom) 55%);
+  min-height: 100vh;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 64px;
+  }
+
+  .sidebar.expanded {
+    width: 200px;
   }
 }
