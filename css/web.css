@@ -1,3 +1,4 @@
+/* GLOBAL — used by the entire site */
 :root {
   --green-dark: #2f4d33;
   --green: #4c8b5d;
@@ -26,9 +27,10 @@ body {
   color: var(--text-dark);
 }
 
-/* =========================================================
-   HERO / NAV
-   ========================================================= */
+
+/* LANDING PAGE (index.html) */
+
+/* Hero / Nav */
 .hero-section {
   position: relative;
   z-index: 1;
@@ -139,9 +141,7 @@ body {
   color: var(--text-dark);
 }
 
-/* =========================================================
-   LOGIN PANEL
-   ========================================================= */
+/* Login panel */
 .login-panel {
   flex-shrink: 0;
   width: 300px;
@@ -287,28 +287,24 @@ body {
   text-decoration: underline;
 }
 
+/* NOTE: #loginPanel / #registerPanel aren't used in index.html or registration.html (both ship as separate pages, not a tab-switch panel) — likely leftover from an earlier approach, safe to delete if confirmed unused */
 #loginPanel,
-#registerPanel{
-    animation: fade .35s ease;
+#registerPanel {
+  animation: fade .35s ease;
 }
 
-@keyframes fade{
-
-    from{
-        opacity:0;
-        transform:translateY(12px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* =========================================================
-   SCROLL CONTENT / SHARED SECTION STYLES
-   ========================================================= */
+/* Scroll content / shared section wrapper */
 .scroll-content {
   background-color: var(--cream-bottom);
   position: relative;
@@ -367,9 +363,7 @@ body {
   object-fit: contain;
 }
 
-/* =========================================================
-   SERVICES
-   ========================================================= */
+/* Services */
 .services-section {
   background-color: var(--green-soft);
   padding: 50px 50px;
@@ -453,9 +447,7 @@ body {
   border-radius: 20px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* Footer */
 footer {
   background-color: var(--green-dark);
   color: #ffffff;
@@ -532,12 +524,8 @@ footer {
   margin-top: 40px;
 }
 
-/* =========================================================
-   REGISTRATION PAGE
-   (append to web.css — new section, reuses existing tokens
-   and .btn-proceed / .field / .input-wrap / .register-line
-   classes already defined for the login page)
-   ========================================================= */
+
+/* REGISTRATION PAGE (registration.html) — reuses shared tokens plus .btn-proceed / .field / .input-wrap / .register-line from the landing page section above */
 .register-page {
   min-height: calc(100vh - 62px);
   background: linear-gradient(180deg, var(--cream-top) 0%, var(--cream-bottom) 100%);
@@ -600,73 +588,8 @@ footer {
   background-color: #3f7a4e;
 }
 
-@media (max-width: 560px) {
-  .form-row-2 {
-    grid-template-columns: 1fr;
-  }
-}
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-@media (max-width: 900px) {
-  .nav-inner {
-    padding: 16px 24px;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .nav-inner nav ul {
-    gap: 22px;
-  }
-
-  .hero-section {
-    min-height: auto;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    padding: 50px 24px 60px;
-    text-align: center;
-  }
-
-  .hero-sub {
-    max-width: 100%;
-  }
-
-  .feature-row {
-    justify-content: center;
-  }
-
-  .login-panel {
-    width: 100%;
-    max-width: 340px;
-  }
-
-  .about-section,
-  .services-section {
-    padding: 60px 24px;
-    min-height: auto;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-img {
-    max-width: 220px;
-    margin: 0 auto;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-  }
-}
-
-/* =========================================================
-   DASHBOARD APP SHELL + SIDEBAR
-   (append to web.css — new section, no existing rules touched)
-   ========================================================= */
+/* DASHBOARD (dashboard.html) — app shell + sidebar */
 .app-shell {
   display: flex;
   min-height: 100vh;
@@ -867,15 +790,79 @@ footer {
   opacity: 0.85;
 }
 
-/* =========================================================
-   DASHBOARD MAIN CONTENT AREA
-   ========================================================= */
+/* Dashboard main content area */
 .dash-main {
   flex-grow: 1;
   background: linear-gradient(180deg, var(--cream-top) 0%, var(--cream-bottom) 55%);
   min-height: 100vh;
 }
 
+
+/* MOBILE VIEW — all responsive breakpoints, grouped by page in the same order as above (landing > registration > dashboard) */
+
+/* Landing page (<= 900px) */
+@media (max-width: 900px) {
+  .nav-inner {
+    padding: 16px 24px;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .nav-inner nav ul {
+    gap: 22px;
+  }
+
+  .hero-section {
+    min-height: auto;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    padding: 50px 24px 60px;
+    text-align: center;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .feature-row {
+    justify-content: center;
+  }
+
+  .login-panel {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .about-section,
+  .services-section {
+    padding: 60px 24px;
+    min-height: auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-img {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
+
+/* Registration page (<= 560px) */
+@media (max-width: 560px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dashboard (<= 700px) */
 @media (max-width: 700px) {
   .sidebar {
     width: 64px;

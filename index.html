@@ -11,7 +11,16 @@
 </head>
 <body>
 
-<!-- HERO SECTION: Sticky nav, tagline, and login card -->
+<!-- Shared icon sprite: check icon used 3x in the feature row -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" stroke="#4C8B5D" stroke-width="2" fill="none"/>
+      <path d="M8 12.5l2.5 2.5L16 9.5" stroke="#4C8B5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+
 <div class="hero-section" id="heroSection">
   <div class="nav-inner">
     <div class="logo">
@@ -20,9 +29,7 @@
         <path d="M12 10C12 10 6 10 6 4C12 4 12 10 12 10Z"/>
         <path d="M12 14C12 14 18 14 18 8C12 8 12 14 12 14Z"/>
       </svg>
-      <!-- "Laan" and "Bayan" are wrapped together in one .wordmark span so the
-           parent .logo's flex `gap` (meant to space the icon from the text)
-           doesn't also insert a gap between the two halves of the word. -->
+      <!-- laan/bayan share one span so .logo's flex gap doesn't split the wordmark -->
       <span class="wordmark"><span class="laan">Laan</span><span class="bayan">Bayan</span></span>
     </div>
     <nav>
@@ -40,18 +47,9 @@
       <h1 class="headline">Iwas Pila,<br>Para sa Bawat Isa.</h1>
       <p class="hero-sub">Laan Bayan lets you request barangay documents and reserve healthcare appointments online, so you only show up when it's actually your turn.</p>
       <div class="feature-row">
-        <span class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4C8B5D" stroke-width="2"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#4C8B5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Digital Queue
-        </span>
-        <span class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4C8B5D" stroke-width="2"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#4C8B5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Fast processing
-        </span>
-        <span class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4C8B5D" stroke-width="2"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#4C8B5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          No-Contact Processing
-        </span>
+        <span class="feature-item"><svg width="16" height="16"><use href="#icon-check"/></svg> Digital Queue</span>
+        <span class="feature-item"><svg width="16" height="16"><use href="#icon-check"/></svg> Fast Processing</span>
+        <span class="feature-item"><svg width="16" height="16"><use href="#icon-check"/></svg> No-Contact Processing</span>
       </div>
     </div>
 
@@ -62,7 +60,7 @@
         <form id="loginForm" novalidate>
           <div class="field">
             <label for="brgy-id">Barangay ID Number</label>
-            <div class="input-wrap"><input id="brgy-id" name="brgy-id" type="text" placeholder="NUMBAH" required autocomplete="off"></div>
+            <div class="input-wrap"><input id="brgy-id" name="brgy-id" type="text" placeholder="NUMBER" required autocomplete="off"></div>
           </div>
           <div class="field">
             <label for="password">Password</label>
@@ -85,10 +83,8 @@
   </div>
 </div>
 
-<!-- SCROLLABLE CONTENT -->
 <div class="scroll-content">
 
-  <!-- ABOUT & PURPOSE SECTION -->
   <section class="about-section" id="about">
     <div class="about">
       <h2 class="about-heading">Built to cut down on wasted trips.</h2>
@@ -105,7 +101,6 @@
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
   <section class="services-section" id="services">
     <div class="services">
       <div class="services-head">
@@ -181,7 +176,6 @@
     </div>
   </section>
 
-  <!-- FOOTER SECTION -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
