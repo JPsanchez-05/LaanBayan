@@ -1,6 +1,4 @@
-// ---------------------------------------------------------
 // SCROLL-REVEAL SECTIONS
-// ---------------------------------------------------------
 const sections = document.querySelectorAll('.page-section');
 
 if (sections.length) {
@@ -15,9 +13,7 @@ if (sections.length) {
   sections.forEach((section) => observer.observe(section));
 }
 
-// ---------------------------------------------------------
 // NAV SMOOTH-SCROLL (only relevant if .nav-links buttons exist)
-// ---------------------------------------------------------
 document.querySelectorAll('.nav-links button').forEach((btn) => {
   btn.addEventListener('click', () => {
     const target = document.getElementById(btn.dataset.target);
@@ -25,12 +21,10 @@ document.querySelectorAll('.nav-links button').forEach((btn) => {
   });
 });
 
-// ---------------------------------------------------------
 // PASSWORD SHOW/HIDE TOGGLE
 // Works for any .toggle-password button paired with the
 // input inside its .input-wrap (login page has one, the
 // registration page has two — Password + Confirm Password)
-// ---------------------------------------------------------
 document.querySelectorAll('.toggle-password').forEach((btn) => {
   const input = btn.parentElement.querySelector('input');
   if (!input) return;
@@ -42,12 +36,10 @@ document.querySelectorAll('.toggle-password').forEach((btn) => {
   });
 });
 
-// ---------------------------------------------------------
 // LOGIN / REGISTER PANEL SWITCH
 // Only wired up if loginPanel/registerPanel/showRegister/showLogin
 // actually exist on the page (they don't in the current index.html,
 // which uses a single login panel with just a "Register here" link)
-// ---------------------------------------------------------
 const loginPanel = document.getElementById("loginPanel");
 const registerPanel = document.getElementById("registerPanel");
 const showRegister = document.getElementById("showRegister");
@@ -69,9 +61,7 @@ if (showLogin && loginPanel && registerPanel) {
   });
 }
 
-// ---------------------------------------------------------
 // LOGIN FORM SUBMIT — redirect to dashboard
-// ---------------------------------------------------------
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
@@ -81,9 +71,7 @@ if (loginForm) {
   });
 }
 
-// ---------------------------------------------------------
 // REGISTRATION FORM SUBMIT (registration.html)
-// ---------------------------------------------------------
 const registerForm = document.getElementById("registerForm");
 const registerError = document.getElementById("registerError");
 
@@ -111,9 +99,7 @@ if (registerForm) {
   });
 }
 
-// ---------------------------------------------------------
 // SIDEBAR TOGGLE (dashb.html)
-// ---------------------------------------------------------
 const sidebar = document.getElementById('sidebar');
 const sidebarToggle = document.getElementById('sidebarToggle');
 
@@ -130,3 +116,20 @@ document.querySelectorAll('.sidebar-link[data-page]').forEach((link) => {
     link.classList.add('active');
   });
 });
+
+// Live clock
+function updateDashClock() {
+  const clockEl = document.getElementById('dashClock');
+  if (!clockEl) return;
+
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const period = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12;
+
+  clockEl.textContent = `${hours}:${minutes} ${period}`;
+}
+
+updateDashClock();
+setInterval(updateDashClock, 30 * 1000);

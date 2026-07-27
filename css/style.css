@@ -9,6 +9,12 @@
   --text-dark: #223022;
   --text-gray: #6b6b63;
   --panel-sage: #b7c7ac;
+  --dash-green: #2D5A3F;
+  --dash-cream-start: #FFFFFE;
+  --dash-cream-end: #FFF0BB;
+  --dash-status-available: rgba(97, 242, 71, 0.2);
+  --dash-status-unavailable: rgba(255, 96, 82, 0.2);
+  --dash-text-muted: #6B7A70;
 }
 
 * {
@@ -91,11 +97,10 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 60px;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   margin: auto;
-  padding: 40px 50px;
-  flex-grow: 1;
+  padding: 40px 30px; 
 }
 
 .eyebrow {
@@ -144,7 +149,7 @@ body {
 /* Login panel */
 .login-panel {
   flex-shrink: 0;
-  width: 300px;
+  width: 350px;
   background-color: var(--panel-sage);
   border-radius: 22px;
   padding: 22px 22px 20px;
@@ -797,6 +802,38 @@ footer {
   min-height: 100vh;
 }
 
+/* Dashboard header */
+.dash-content {
+  padding: 32px 48px;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.dash-greeting {
+  font-family: 'Kavivanar', cursive;
+  font-weight: 400;
+  font-size: 40px;
+  color: var(--dash-green);
+  margin-bottom: 8px;
+}
+
+.dash-subtitle {
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 600px;
+}
+
+.dash-clock {
+  font-size: 20px;
+  color: var(--dash-text-muted);
+  white-space: nowrap;
+}
+
 
 /* MOBILE VIEW — all responsive breakpoints, grouped by page in the same order as above (landing > registration > dashboard) */
 
@@ -856,13 +893,6 @@ footer {
 }
 
 /* Registration page (<= 560px) */
-@media (max-width: 560px) {
-  .form-row-2 {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Dashboard (<= 700px) */
 @media (max-width: 700px) {
   .sidebar {
     width: 64px;
@@ -870,5 +900,14 @@ footer {
 
   .sidebar.expanded {
     width: 200px;
+  }
+
+  .dash-content {
+    padding: 24px;
+  }
+
+  .dash-header {
+    flex-direction: column;
+    gap: 8px;
   }
 }
