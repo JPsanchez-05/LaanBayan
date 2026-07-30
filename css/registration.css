@@ -1,0 +1,176 @@
+.register-page {
+  min-height: calc(100vh - 62px);
+  background: linear-gradient(180deg, var(--cream-top) 0%, var(--cream-bottom) 100%);
+  display: flex;
+  justify-content: center;
+  padding: 60px 24px 80px;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 460px;
+  height: fit-content;
+  background-color: var(--cream-top);
+  border: 1px solid rgba(47, 77, 51, 0.08);
+  border-radius: 16px;
+  padding: 28px 30px 26px;
+  box-shadow: 0 8px 20px rgba(47, 77, 51, 0.1);
+}
+
+.register-heading {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.agree-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-gray);
+  margin: 6px 0 18px;
+}
+
+.agree-row input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.agree-row a {
+  color: var(--green-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.btn-register {
+  background-color: var(--green);
+}
+
+.btn-register:hover {
+  background-color: #3f7a4e;
+}
+
+/* Hero banner (reused from landing page; nav list intentionally removed) */
+.hero-section {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, var(--cream-top) 0%, var(--cream-bottom) 100%);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-inner {
+  background-color: var(--green-dark);
+  padding: 18px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.logo .laan {
+  color: #ffffff;
+}
+
+.logo .bayan {
+  color: var(--gold);
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  padding: 40px 30px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.headline {
+  font-family: 'Kavivanar', cursive;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+.hero-sub {
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-gray);
+  margin-bottom: 22px;
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+@media (max-width: 900px) {
+  .nav-inner {
+    padding: 16px 24px;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .hero-section {
+    min-height: auto;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    padding: 50px 24px 60px;
+    text-align: center;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .feature-row {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,181 @@
+:root {
+  --green-dark: #2f4d33;
+  --green: #4c8b5d;
+  --green-soft: #eaf2ea;
+  --gold: #e9c079;
+  --cream-top: #fdf1cd;
+  --cream-bottom: #fffdf6;
+  --text-dark: #223022;
+  --text-gray: #6b6b63;
+  --panel-sage: #b7c7ac;
+  --dash-green: #2D5A3F;
+  --dash-cream-start: #FFFFFE;
+  --dash-cream-end: #FFF0BB;
+  --dash-status-available: rgba(97, 242, 71, 0.2);
+  --dash-status-unavailable: rgba(255, 96, 82, 0.2);
+  --dash-text-muted: #6B7A70;
+  --dash-glass-bg: rgba(172, 230, 253, 0.2);
+  --queue-status-processing: rgba(255, 99, 71, 0.25);
+  --queue-status-inqueue: rgba(233, 192, 121, 0.45);
+  --queue-status-served: rgba(97, 242, 71, 0.25);
+  --queue-chip-bg: rgba(233, 192, 121, 0.35);
+  --queue-chip-text: #7a5f1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream-bottom);
+  color: var(--text-dark);
+}
+
+/* Shared auth form pieces — used by both the landing page login panel
+   and registration.html (per the original file's own note). */
+.form-error {
+  background-color: #ffe1e1;
+  color: #7a1a1a;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #e4e4e0;
+  background-color: #f4f4f1;
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.input-wrap input::placeholder {
+  color: #9a9a94;
+  letter-spacing: 0.4px;
+}
+
+.input-wrap input:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+  background-color: #ffffff;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+}
+
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 4px 0 16px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.forgot {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.btn-proceed {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--green-dark);
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-proceed:hover {
+  background-color: #253d28;
+}
+
+.btn-proceed:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.register-line {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dark);
+  margin-top: 14px;
+}
+
+.register-link {
+  color: var(--green-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* NOTE: #loginPanel / #registerPanel aren't used in index.html or registration.html
+   (both ship as separate pages, not a tab-switch panel) — likely leftover from an
+   earlier approach, safe to delete if confirmed unused */
+#loginPanel,
+#registerPanel {
+  animation: fade .35s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

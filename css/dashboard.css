@@ -1,0 +1,460 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 72px;
+  background-color: var(--green-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 0;
+  transition: width 0.25s ease;
+  overflow: hidden;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+.sidebar-top,
+.sidebar-nav,
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-top {
+  margin-bottom: 28px;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 22px;
+  height: 32px;
+  margin-bottom: 14px;
+}
+
+.sidebar-brand svg {
+  flex-shrink: 0;
+  stroke: var(--gold);
+}
+
+.sidebar-brand-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #ffffff;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expanded .sidebar-brand-text {
+  opacity: 1;
+}
+
+.sidebar-brand-text .bayan {
+  color: var(--gold);
+}
+
+.sidebar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 22px;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar-toggle svg {
+  flex-shrink: 0;
+  stroke: #ffffff;
+}
+
+.sidebar-toggle-text {
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expanded .sidebar-toggle-text {
+  opacity: 1;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  opacity: 0.85;
+  border-radius: 0;
+  position: relative;
+}
+
+.sidebar-link svg {
+  flex-shrink: 0;
+  stroke: #ffffff;
+}
+
+.sidebar-link span {
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expanded .sidebar-link span {
+  opacity: 1;
+}
+
+.sidebar-link:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-link.active {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  background-color: var(--gold);
+  border-radius: 0 3px 3px 0;
+}
+
+.sidebar-bottom {
+  gap: 10px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 4px 22px 10px;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px 10px;
+}
+
+.sidebar-user svg {
+  flex-shrink: 0;
+  stroke: #ffffff;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.expanded .sidebar-user-info {
+  opacity: 1;
+}
+
+.sidebar-user-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sidebar-user-role {
+  font-size: 11px;
+  color: var(--gold);
+}
+
+.sidebar-signout {
+  opacity: 0.85;
+}
+
+/* Dashboard main content area */
+.dash-main {
+  flex-grow: 1;
+  background: linear-gradient(180deg, var(--cream-top) 0%, var(--cream-bottom) 55%);
+  min-height: 100vh;
+}
+
+/* Dashboard header */
+.dash-content {
+  padding: 32px 48px;
+}
+
+.dash-section {
+  display: none;
+}
+
+.dash-section.active {
+  display: block;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.dash-greeting {
+  font-family: 'Kavivanar', cursive;
+  font-weight: 400;
+  font-size: 48px;
+  color: var(--dash-green);
+  margin-bottom: 8px;
+}
+
+.dash-subtitle {
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 600px;
+}
+
+.dash-clock {
+  font-size: 20px;
+  color: var(--dash-text-muted);
+  white-space: nowrap;
+}
+
+/* Dashboard body — Announcements / Services / Booking panels */
+.dash-panels {
+  display: grid;
+  grid-template-columns: 260px 1.9fr 2.2fr;
+  gap: 24px;
+  margin-top: 32px;
+  align-items: start;
+}
+
+.dash-panel {
+  background-color: var(--dash-glass-bg);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.dash-panel-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--dash-green);
+  margin-bottom: 16px;
+}
+
+/* Announcements */
+.dash-announcements {
+  min-height: 489px;
+}
+
+.announcement-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.51);
+  border: 1px solid var(--dash-green);
+  border-radius: 15px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.announcement-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #333333;
+}
+
+.announcement-divider {
+  height: 1px;
+  background-color: #000000;
+  margin: 10px 0 8px;
+  display: none;
+}
+
+.announcement-blurb {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #828282;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.announcement-card.is-open .announcement-divider {
+  display: block;
+}
+
+.announcement-card.is-open .announcement-blurb {
+  max-height: 200px;
+}
+
+/* Services & Status */
+.dash-services {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-row {
+  background-color: var(--dash-glass-bg);
+  border-radius: 24px;
+  padding: 20px;
+  min-height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-row-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  color: var(--dash-text-muted);
+}
+
+.status-pill {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--dash-text-muted);
+  padding: 8px 16px;
+  border-radius: 24px;
+  white-space: nowrap;
+}
+
+.status-pill--available {
+  background-color: var(--dash-status-available);
+}
+
+.status-pill--unavailable {
+  background-color: var(--dash-status-unavailable);
+}
+
+/* Book an appointment */
+.dash-booking-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #828282;
+  margin-bottom: 12px;
+}
+
+.dash-booking-steps {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #828282;
+  padding-left: 18px;
+  margin-bottom: 20px;
+}
+
+.dash-booking-steps li {
+  margin-bottom: 6px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.booking-form-row {
+  display: flex;
+  gap: 14px;
+}
+
+.booking-select,
+.booking-input {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: none;
+  border-radius: 16px;
+  padding: 14px 17px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--dash-text-muted);
+}
+
+.booking-select--date {
+  flex: 0 0 129px;
+}
+
+.btn-submit {
+  align-self: center;
+  background-color: var(--dash-green);
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 24px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #25492f;
+}
+
+/* Sidebar / header mobile (<= 700px) */
+@media (max-width: 700px) {
+  .sidebar {
+    width: 64px;
+  }
+
+  .sidebar.expanded {
+    width: 200px;
+  }
+
+  .dash-content {
+    padding: 24px;
+  }
+
+  .dash-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Dashboard panels — mobile stacking (<= 900px) */
+@media (max-width: 900px) {
+  .dash-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form-row {
+    flex-direction: column;
+  }
+
+  .booking-select--date {
+    flex: 1;
+  }
+}
