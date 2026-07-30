@@ -15,6 +15,12 @@
   --dash-status-available: rgba(97, 242, 71, 0.2);
   --dash-status-unavailable: rgba(255, 96, 82, 0.2);
   --dash-text-muted: #6B7A70;
+  --dash-glass-bg: rgba(172, 230, 253, 0.2);
+  --queue-status-processing: rgba(255, 99, 71, 0.25);
+  --queue-status-inqueue: rgba(233, 192, 121, 0.45);
+  --queue-status-served: rgba(97, 242, 71, 0.25);
+  --queue-chip-bg: rgba(233, 192, 121, 0.35);
+  --queue-chip-text: #7a5f1e;
 }
 
 * {
@@ -318,7 +324,7 @@ body {
 
 .about-section {
   padding: 50px 50px;
-  min-height: 700px;
+  min-height: 75 0px;
   display: flex;
   align-items: center;
 }
@@ -807,6 +813,14 @@ footer {
   padding: 32px 48px;
 }
 
+.dash-section {
+  display: none;
+}
+
+.dash-section.active {
+  display: block;
+}
+
 .dash-header {
   display: flex;
   justify-content: space-between;
@@ -817,7 +831,7 @@ footer {
 .dash-greeting {
   font-family: 'Kavivanar', cursive;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 48px;
   color: var(--dash-green);
   margin-bottom: 8px;
 }
@@ -832,6 +846,331 @@ footer {
   font-size: 20px;
   color: var(--dash-text-muted);
   white-space: nowrap;
+}
+
+/* Dashboard body — Announcements / Services / Booking panels */
+.dash-panels {
+  display: grid;
+  grid-template-columns: 260px 1.9fr 2.2fr;
+  gap: 24px;
+  margin-top: 32px;
+  align-items: start;
+}
+
+.dash-panel {
+  background-color: var(--dash-glass-bg);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.dash-panel-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--dash-green);
+  margin-bottom: 16px;
+}
+
+/* Announcements */
+.dash-announcements {
+  min-height: 489px;
+}
+
+.announcement-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.51);
+  border: 1px solid var(--dash-green);
+  border-radius: 15px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.announcement-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #333333;
+}
+
+.announcement-divider {
+  height: 1px;
+  background-color: #000000;
+  margin: 10px 0 8px;
+  display: none;
+}
+
+.announcement-blurb {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #828282;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.announcement-card.is-open .announcement-divider {
+  display: block;
+}
+
+.announcement-card.is-open .announcement-blurb {
+  max-height: 200px;
+}
+
+/* Services & Status */
+.dash-services {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-row {
+  background-color: var(--dash-glass-bg);
+  border-radius: 24px;
+  padding: 20px;
+  min-height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-row-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  color: var(--dash-text-muted);
+}
+
+.status-pill {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--dash-text-muted);
+  padding: 8px 16px;
+  border-radius: 24px;
+  white-space: nowrap;
+}
+
+.status-pill--available {
+  background-color: var(--dash-status-available);
+}
+
+.status-pill--unavailable {
+  background-color: var(--dash-status-unavailable);
+}
+
+/* Book an appointment */
+.dash-booking-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #828282;
+  margin-bottom: 12px;
+}
+
+.dash-booking-steps {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #828282;
+  padding-left: 18px;
+  margin-bottom: 20px;
+}
+
+.dash-booking-steps li {
+  margin-bottom: 6px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.booking-form-row {
+  display: flex;
+  gap: 14px;
+}
+
+.booking-select,
+.booking-input {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: none;
+  border-radius: 16px;
+  padding: 14px 17px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--dash-text-muted);
+}
+
+.booking-select--date {
+  flex: 0 0 129px;
+}
+
+.btn-submit {
+  align-self: center;
+  background-color: var(--dash-green);
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 24px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #25492f;
+}
+
+/* My Queue — active queue cards + previous appointments table */
+.queue-panels {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 24px;
+  margin-top: 32px;
+  align-items: start;
+}
+
+.queue-active-panel {
+  background-color: transparent;
+  padding: 0;
+}
+
+.queue-active-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.queue-card {
+  background-color: #ffffff;
+  border: 1px solid var(--green-soft);
+  border-radius: 20px;
+  padding: 18px 20px;
+}
+
+.queue-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.queue-card-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-dark);
+}
+
+.queue-card-duration {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--text-gray);
+  margin-bottom: 10px;
+}
+
+.queue-status {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.queue-status--processing {
+  background-color: var(--queue-status-processing);
+}
+
+.queue-status--in-queue {
+  background-color: var(--queue-status-inqueue);
+}
+
+.queue-status--served {
+  background-color: var(--queue-status-served);
+}
+
+.queue-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.queue-chip {
+  background-color: var(--queue-chip-bg);
+  color: var(--queue-chip-text);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.queue-chip-note {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.queue-card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.queue-number {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--text-dark);
+}
+
+.queue-history-panel {
+  background-color: transparent;
+  padding: 0;
+}
+
+.queue-history-table-wrap {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(47, 77, 51, 0.06);
+}
+
+.queue-history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.queue-history-table th {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  background-color: var(--green-soft);
+  padding: 12px;
+  text-align: left;
+}
+
+.queue-history-table td {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-dark);
+  padding: 12px;
+  border-bottom: 1px solid var(--green-soft);
+  text-align: left;
+}
+
+.queue-history-table tr.is-empty-row td {
+  color: transparent;
 }
 
 
@@ -909,5 +1248,27 @@ footer {
   .dash-header {
     flex-direction: column;
     gap: 8px;
+  }
+}
+
+/* Dashboard panels — mobile stacking */
+@media (max-width: 900px) {
+  .dash-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form-row {
+    flex-direction: column;
+  }
+
+  .booking-select--date {
+    flex: 1;
+  }
+}
+
+/* Queue panels — mobile stacking */
+@media (max-width: 900px) {
+  .queue-panels {
+    grid-template-columns: 1fr;
   }
 }

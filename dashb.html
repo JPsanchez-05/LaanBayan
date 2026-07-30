@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LaanBayan — Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Kavivanar&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -59,11 +59,13 @@
         <span>Sign out</span>
       </a>
     </div>
-    
+
   </aside>
 
   <main class="dash-main" id="dashMain">
     <div class="dash-content">
+
+      <section class="dash-section active" data-section="dashboard">
   <header class="dash-header">
     <div class="dash-heading">
       <h1 class="dash-greeting">Maganda-araw, <span class="dash-username">Juan</span>!</h1>
@@ -72,7 +74,135 @@
     <time class="dash-clock" id="dashClock"></time>
   </header>
 
-</div>
+  <div class="dash-panels">
+
+    <section class="dash-panel dash-announcements">
+  <h2 class="dash-panel-title">Announcements</h2>
+
+  <button type="button" class="announcement-card">
+    <p class="announcement-text">Community Clean-Up Drive — July 20, 2026</p>
+    <div class="announcement-divider"></div>
+    <p class="announcement-blurb">Meet at the barangay hall covered court at 6:00 AM. Bring gloves and a reusable water bottle — purok leaders will assign areas on-site.</p>
+  </button>
+
+  <button type="button" class="announcement-card">
+    <p class="announcement-text">New Office Hours Effective August 1, 2026</p>
+    <div class="announcement-divider"></div>
+    <p class="announcement-blurb">If this is your first time with us, no worries! Just follow the directions below and you're good to go!</p>
+  </button>
+</section>
+
+    <section class="dash-panel dash-services">
+      <h2 class="dash-panel-title">Services & Status</h2>
+
+      <div class="service-row">
+        <span class="service-row-name">Barangay Clearance</span>
+        <span class="status-pill status-pill--unavailable">unavailable</span>
+      </div>
+      <div class="service-row">
+        <span class="service-row-name">Cedula</span>
+        <span class="status-pill status-pill--available">available</span>
+      </div>
+      <div class="service-row">
+        <span class="service-row-name">Certificate of Indigency</span>
+        <span class="status-pill status-pill--available">available</span>
+      </div>
+      <div class="service-row">
+        <span class="service-row-name">Business Permit Endorsement</span>
+        <span class="status-pill status-pill--unavailable">unavailable</span>
+      </div>
+      <div class="service-row">
+        <span class="service-row-name">Barangay ID</span>
+        <span class="status-pill status-pill--available">available</span>
+      </div>
+    </section>
+
+    <section class="dash-panel dash-booking">
+      <h2 class="dash-panel-title">Book an appointment now</h2>
+      <p class="dash-booking-intro">If this is your first time with us, no worries! Just follow the directions below and you're good to go!</p>
+
+      <ol class="dash-booking-steps">
+        <li>Choose a service – Select a barangay service you need (e.g., clearance, indigency certificate, business permit).</li>
+        <li>Pick a date – Choose your preferred appointment date from the available slots.</li>
+        <li>Specify details (if Others) – If your service falls under "Others," type in a short description of what you need.</li>
+        <li>Confirm and submit – Review your selections and tap Book Appointment to get your queue number.</li>
+      </ol>
+
+      <form class="booking-form" id="bookingForm">
+        <div class="booking-form-row">
+          <select class="booking-select" id="serviceSelect" required>
+            <option value="" disabled selected>Pumili ng serbisyo</option>
+            <option value="clearance">Barangay Clearance</option>
+            <option value="cedula">Cedula</option>
+            <option value="indigency">Certificate of Indigency</option>
+            <option value="permit">Business Permit Endorsement</option>
+            <option value="id">Barangay ID</option>
+            <option value="others">Others</option>
+          </select>
+
+          <select class="booking-select booking-select--date" id="dateSelect" required>
+            <option value="" disabled selected>Petsa</option>
+          </select>
+        </div>
+
+        <input type="text" class="booking-input" id="othersInput" placeholder="If others, please specify">
+
+        <button type="submit" class="btn-submit">I-submit</button>
+      </form>
+    </section>
+
+  </div>
+</section>
+
+      <section class="dash-section" data-section="queue">
+  <header class="dash-header">
+    <div class="dash-heading">
+      <h1 class="dash-greeting">My Queues</h1>
+      <p class="dash-subtitle">You can view services that you have submitted and previous transactions</p>
+    </div>
+    <time class="dash-clock" id="dashClockQueue"></time>
+  </header>
+
+  <div class="queue-panels">
+
+    <section class="dash-panel queue-active-panel">
+      <div class="queue-active-list" id="queueActiveList">
+        <!-- queue cards rendered by renderActiveQueue() in script.js -->
+      </div>
+    </section>
+
+    <section class="dash-panel queue-history-panel">
+      <h2 class="dash-panel-title">Previous appointments</h2>
+      <div class="queue-history-table-wrap">
+        <table class="queue-history-table">
+          <thead>
+            <tr>
+              <th>Type of Service</th>
+              <th>Date of Appointment</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="queueHistoryBody">
+            <!-- rows rendered by renderQueueHistory() in script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</section>
+
+      <section class="dash-section" data-section="about">
+        <header class="dash-header">
+          <div class="dash-heading">
+            <h1 class="dash-greeting">About</h1>
+            <p class="dash-subtitle">Learn more about LaanBayan and how to reach us.</p>
+          </div>
+        </header>
+        <!-- mission/purpose, barangay contact details, office hours go here -->
+      </section>
+
+    </div>
   </main>
 
 </div>
